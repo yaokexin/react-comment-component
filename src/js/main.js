@@ -16,21 +16,24 @@ class CommentList extends React.Component{
             ]
         }
     }
+
+    renderList(){
+        return this.state.list.map((item, i)=> (
+                <li key={i}>
+                    <h3>评论人:{item.user}</h3>
+                    <p>
+                        评论内容:{item.content}
+                    </p>
+                </li>
+            )
+        )
+    }
     render(){
         return (
             <div>
                 <h1>评论组件</h1>
                 <ul>
-                    {this.state.list.map(function(item,i){
-                        return (
-                            <li key={i}>
-                                <h3>评论人:{item.user}</h3>
-                                <p>
-                                    评论内容:{item.content}
-                                </p>
-                            </li>
-                        )
-                    })}
+                    {this.renderList()}
                 </ul>    
             </div>
         )
