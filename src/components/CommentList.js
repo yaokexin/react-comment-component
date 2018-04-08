@@ -24,7 +24,7 @@ export default class CommentList extends React.Component {
         return this.state.list.map((item, i) => (
             //通过 props 来传递数据
             // key 属性  遍历谁 加给谁
-            <Commentitem user={item.user} content={item.content} key={i}></Commentitem>
+            <Commentitem {...item} key={i}></Commentitem>
         )
         )
     }
