@@ -24,10 +24,10 @@ export default class CommentList extends React.Component {
         this.addComment = this.addComment.bind(this)
     }
     //提供一个方法
-    addComment(data){
+    addComment(user,content){
         console.log(this);
-        console.log('父组件中获取到数据',data)
-        this.state.list.unshift({user:'yaokexin',content:data})
+        // console.log('父组件中获取到数据',data)
+        this.state.list.unshift({user,content})
         this.setState({
             list:this.state.list
         })
